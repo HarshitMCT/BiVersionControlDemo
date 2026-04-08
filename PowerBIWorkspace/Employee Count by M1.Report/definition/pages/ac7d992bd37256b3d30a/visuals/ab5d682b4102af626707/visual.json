@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "ab5d682b4102af626707",
+  "position": {
+    "x": 10,
+    "y": 0,
+    "z": 0,
+    "height": 375,
+    "width": 558,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ResellerSalesTargets"
+                    }
+                  },
+                  "Property": "M01"
+                }
+              },
+              "queryRef": "ResellerSalesTargets.M01",
+              "nativeQueryRef": "M01",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "ResellerSalesTargets"
+                        }
+                      },
+                      "Property": "EmployeeID"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(ResellerSalesTargets.EmployeeID)",
+              "nativeQueryRef": "Count of EmployeeID"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "ResellerSalesTargets"
+                      }
+                    },
+                    "Property": "EmployeeID"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "452581a12b400ef2146f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ResellerSalesTargets"
+              }
+            },
+            "Property": "M01"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "abc6e1de5c672968a356",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ResellerSalesTargets"
+                  }
+                },
+                "Property": "EmployeeID"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
